@@ -4,7 +4,7 @@ require 'minitest/autorun'
 class DeckTest < MiniTest::Test
 
   def test_52_cards
-
+    
   end
 
   def test_13_of_each_suit
