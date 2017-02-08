@@ -1,21 +1,23 @@
 
 class Card
+  include Comparable
   attr_accessor :face, :value, :suit
 
   def initialize(suit:, face:)
     @face = face
     @suit = suit
-    @value = vset(face)
+    @value = self.class.faces.index(face)+2
   end
 
-  def vset(f)
-    case
-    when f.to_i != 0 then f.to_i
-    when f == 'j' then 11
-    when f == 'q' then 12
-    when f == 'k' then 13
-    when f == 'a' then 14
-    end
+  def <=>(other)
+    value <=> other.value
   end
 
+  def self.faces
+    Array(2..10)+%w(J Q K A)
+  end
+
+  def self.suits
+    %w(Hearts Diamonds Clubs Spades)
+  end
 end
