@@ -1,15 +1,14 @@
-require "./card.rb"
-require 'pry'
+require './card.rb'
 
 class Deck < Array
   def initialize
     Card.suits.each do |s|
-      Card.faces.each{ |f| self << Card.new(suit: s, face: f)}
+      Card.faces.each { |f| self << Card.new(suit: s, face: f) }
     end
-    self.shuffle!
+    shuffle!
   end
 
   def draw
-    self.shift
+    shift
   end
 end

@@ -1,8 +1,7 @@
-require "./card.rb"
+require './card.rb'
 require 'minitest/autorun'
 
 class CardTest < MiniTest::Test
-
   def test_attributes_exist
     assert c(5).suit
     assert c(5).face
@@ -32,7 +31,6 @@ class CardTest < MiniTest::Test
   end
 
   def c(f)
-    Card.new(suit: "diamonds", face: f)
+    Card.new(suit: 'diamonds', face: f)
   end
-
 end

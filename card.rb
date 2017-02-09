@@ -6,7 +6,7 @@ class Card
   def initialize(suit:, face:)
     @face = face
     @suit = suit
-    @value = self.class.faces.index(face)+2
+    @value = self.class.faces.index(face) + 2
   end
 
   def <=>(other)
@@ -14,7 +14,7 @@ class Card
   end
 
   def self.faces
-    Array(2..10)+%w(J Q K A)
+    Array(2..10) + %w(J Q K A)
   end
 
   def self.suits
