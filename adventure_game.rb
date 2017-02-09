@@ -7,8 +7,8 @@ class Game
   def initialize
     @deck1 = Deck.new
     @deck2 = Deck.new
-    @winpile1 = []
-    @winpile2 = []
+    @winpile1 = Deck.new.clear
+    @winpile2 = Deck.new.clear
     @rounds = 0
     @wars = 0
     play
@@ -26,9 +26,10 @@ class Game
   end
 
   def play
+
     playround until deck1.count == 0 || deck2.count == 0
-    keybind pry
-    self.winner = case winpile1.count <=> winpile2.count
+
+    self.winner = case winpile1.count + deck1.count <=> winpile2.count + deck2.count
                   when 1 then 'Player 1 won'
                   when 0 then 'Players tied'
                   when -1 then 'Player 2 won'
@@ -46,7 +47,7 @@ class Game
   end
 
   def results
-    print "#{winner} won this game after #{rounds} rounds and survived #{wars} WARS. "
+    print "#{winner} this game after #{rounds} rounds and survived #{wars} WARS. "
   end
 end
 

@@ -34,7 +34,7 @@ class Game
   end
 
   def results
-    print "#{winner} won this game after #{rounds} rounds and survived #{wars} WARS. "
+    print "#{winner} this game after #{rounds} rounds and survived #{wars} WARS. "
   end
 end
 
