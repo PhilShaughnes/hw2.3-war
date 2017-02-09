@@ -30,6 +30,7 @@ class DeckTest < MiniTest::Test
   end
 
   def test_draw_card
-
+    assert @deck.draw.class == Card
+    assert @deck.count == 51
   end
 end
