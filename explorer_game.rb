@@ -26,7 +26,7 @@ class Game
 
   def play
     playround until deck1.count == 0 && deck2.count == 0
-    self.winner = case winpile1.count <=> winpile2.count
+    self.winner = case winpile1.flatten.count <=> winpile2.flatten.count
                   when 1 then 'Player 1 won'
                   when 0 then 'Players tied'
                   when -1 then 'Player 2 won'
